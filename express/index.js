@@ -5,9 +5,30 @@ const express = require('express')
 const app = express()
 
 
+// calling path moduke
+const path =require('path')
+
+
+
+app.get('/',(request,response)=>{
+    
+    
+    response.sendFile(path.resolve(__dirname,'index.html'))
+    
+ /*  response.json(
+   
+   {
+       name: 'Home Page parsing'
+   }
+   ) */
+    
+})
+
+
+
 app.get('/about',(request,response)=>{
     
-   response.json(
+   response.send(
    
    {
        name: 'Nujoo Nazar'
