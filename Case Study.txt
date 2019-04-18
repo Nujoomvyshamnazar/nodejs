@@ -1,0 +1,5 @@
+Author : Nujoom Nazar
+-Creating Node Server
+-Creating Navigation To make call
+-Creating Static page call
+-Creating 404 page calling condition
