@@ -5,7 +5,16 @@ const express = require('express')
 const app = express()
 
 
-
+app.get('/about',(request,response)=>{
+    
+   response.json(
+   
+   {
+       name: 'Nujoo Nazar'
+   }
+   ) 
+    
+})
 
 app.listen(3000,()=>{
     
