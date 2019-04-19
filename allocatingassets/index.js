@@ -10,10 +10,17 @@ const path =require('path')
 
 
 
+// calling Asset function
+
+app.use(express.static('public'))
+
+
+
+
 app.get('/',(request,response)=>{
     
     
-    response.sendFile(path.resolve(__dirname,'index.html'))
+    response.sendFile(path.resolve(__dirname,'homepage.html'))
     
  /*  response.json(
    
