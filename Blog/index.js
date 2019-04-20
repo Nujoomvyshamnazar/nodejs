@@ -1,15 +1,32 @@
 // Calling Express  module After installing Express Package
 const express = require('express')
 
+// Creating Server Instance
+const app = new express()
 // calling path module
 const path = require('path')
 
+// calling express Edge Template engine
+const expressEdge = require('express-edge')
 
-// Creating Server Instance
-const app = new express()
+
+// adding assets to your project
+
+app.use(express.static('public'))
+
+
+// using express edge in App
+app.use(expressEdge)
+
+app.set('views', `${__dirname}/views`);
+
+
+
 
 // calling pages index.html
 
+
+/*
 app.get('/',(req,res)  =>
        
      {
@@ -19,6 +36,13 @@ res.sendFile(path.resolve(__dirname,'pages/index.html'))
 }  
        
        )
+       */
+
+app.get('/',(req,res) => {
+    
+    res.render('index')
+    
+})
 
 // about page
 
@@ -60,9 +84,7 @@ res.sendFile(path.resolve(__dirname,'pages/contact.html'))
        )
 
 
-// adding assets to your project
 
-app.use(express.static('public'))
 
 
 
