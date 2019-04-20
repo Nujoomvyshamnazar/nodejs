@@ -71,6 +71,8 @@ app.get('/about',(req,res) => {
 
 // post page
 
+
+/*
 app.get('/post',(req,res)  =>
        
      {
@@ -81,11 +83,16 @@ res.sendFile(path.resolve(__dirname,'pages/post.html'))
        
        )
 
-
+*/
+app.get('/post',(req,res) => {
+    
+    res.render('post')
+    
+})
 
 
 // contact page
-
+/*
 app.get('/contact',(req,res)  =>
        
      {
@@ -97,7 +104,13 @@ res.sendFile(path.resolve(__dirname,'pages/contact.html'))
        )
 
 
+*/
 
+app.get('/contact',(req,res) => {
+    
+    res.render('contact')
+    
+})
 
 
 
