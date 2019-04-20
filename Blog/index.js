@@ -20,6 +20,45 @@ res.sendFile(path.resolve(__dirname,'pages/index.html'))
        
        )
 
+// about page
+
+app.get('/about',(req,res)  =>
+       
+     {
+
+res.sendFile(path.resolve(__dirname,'pages/about.html'))
+             
+}  
+       
+       )
+
+// post page
+
+app.get('/post',(req,res)  =>
+       
+     {
+
+res.sendFile(path.resolve(__dirname,'pages/post.html'))
+             
+}  
+       
+       )
+
+
+
+
+// contact page
+
+app.get('/contact',(req,res)  =>
+       
+     {
+
+res.sendFile(path.resolve(__dirname,'pages/contact.html'))
+             
+}  
+       
+       )
+
 
 // adding assets to your project
 
