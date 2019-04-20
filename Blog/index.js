@@ -38,6 +38,8 @@ res.sendFile(path.resolve(__dirname,'pages/index.html'))
        )
        */
 
+// rendering Index
+
 app.get('/',(req,res) => {
     
     res.render('index')
@@ -46,6 +48,7 @@ app.get('/',(req,res) => {
 
 // about page
 
+/*
 app.get('/about',(req,res)  =>
        
      {
@@ -55,6 +58,16 @@ res.sendFile(path.resolve(__dirname,'pages/about.html'))
 }  
        
        )
+*/
+
+// rendering About page
+
+app.get('/about',(req,res) => {
+    
+    res.render('about')
+    
+})
+
 
 // post page
 
