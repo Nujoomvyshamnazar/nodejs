@@ -4,7 +4,9 @@
   "description": "This is My First Blog in Node.js",
   "main": "index.js",
   "scripts": {
-    "test": "Hello world"
+    "start": "nodemon index.js",
+      "test":"hello Nujoom Its working"
+    
   },
   "keywords": [
     "Nujoom",
@@ -14,5 +16,8 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.11"
   }
 }

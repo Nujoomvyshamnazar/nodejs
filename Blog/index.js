@@ -7,6 +7,8 @@ const app = new express()
 
 
 // listening to the port 4000
+
+// npm install nodemon --save-dev // adding nodemon only for development
 app.listen(4000,()=>
         {  
 
