@@ -1,10 +1,22 @@
 // Calling Express  module After installing Express Package
 const express = require('express')
 
+
+
+
 // Creating Server Instance
 const app = new express()
+
+
 // calling path module
 const path = require('path')
+
+
+// connecting mangodb
+const mongoose = require('mangoose')
+mongoose.connect('mongodb://localhost/node-js-blog')
+
+
 
 // calling express Edge Template engine
 const expressEdge = require('express-edge')
