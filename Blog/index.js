@@ -1,8 +1,9 @@
+
+// connecting mangodb
+//const mongoose = require('mangoose')
+
 // Calling Express  module After installing Express Package
 const express = require('express')
-
-
-
 
 // Creating Server Instance
 const app = new express()
@@ -12,9 +13,7 @@ const app = new express()
 const path = require('path')
 
 
-// connecting mangodb
-const mongoose = require('mangoose')
-mongoose.connect('mongodb://localhost/node-js-blog')
+//mongoose.connect('mongodb://localhost/node-js-blog')
 
 
 
@@ -117,6 +116,15 @@ res.sendFile(path.resolve(__dirname,'pages/contact.html'))
 
 
 */
+
+// rendering Index
+
+app.get('/post/new',(req,res) => {
+    
+    res.render('new')
+    
+})
+
 
 app.get('/contact',(req,res) => {
     
