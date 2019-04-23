@@ -14,6 +14,7 @@
   "author": "Nujoom Nazar",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "express-edge": "^1.0.0",
     "mangodb": "^1.0.0",

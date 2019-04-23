@@ -1,25 +1,29 @@
 
 // connecting mangodb
-//const mongoose = require('mangoose')
 
-// Calling Express  module After installing Express Package
 const express = require('express')
 
+const bodyParser = require('body-parser')
+
+const path = require('path')
+//const mongoose = require('mangoose')
+const mongoose = require('mongoose')
 // Creating Server Instance
 const app = new express()
 
 
 // calling path module
-const path = require('path')
 
 
-//mongoose.connect('mongodb://localhost/node-js-blog')
+
+mongoose.connect('mongodb://localhost/node-js-blog')
 
 
 
 // calling express Edge Template engine
 const expressEdge = require('express-edge')
 
+const Post = require('./database/models/Post')
 
 // adding assets to your project
 
@@ -32,6 +36,13 @@ app.use(expressEdge)
 app.set('views', `${__dirname}/views`);
 
 
+
+
+
+app.use(bodyParser.json())
+
+
+app.use(bodyParser.urlencoded({ extended: true }))
 
 
 // calling pages index.html
@@ -51,9 +62,17 @@ res.sendFile(path.resolve(__dirname,'pages/index.html'))
 
 // rendering Index
 
-app.get('/',(req,res) => {
+app.get('/', async (req,res) => {
     
-    res.render('index')
+    const posts = await Post.find({})
+    
+    
+    console.log(posts)
+    
+    res.render('index',{
+        
+        posts 
+    })
     
 })
 
@@ -95,9 +114,25 @@ res.sendFile(path.resolve(__dirname,'pages/post.html'))
        )
 
 */
-app.get('/post',(req,res) => {
+app.get('/posts',(req,res) => {
     
     res.render('post')
+    
+})
+
+
+
+// Post response data and redirect
+app.post('/posts/store', (req,res) => {
+    
+ Post.create(req.body,(error,post)=>
+     
+            {
+       res.redirect('/')
+            }
+           
+           )  
+
     
 })
 
@@ -119,7 +154,7 @@ res.sendFile(path.resolve(__dirname,'pages/contact.html'))
 
 // rendering Index
 
-app.get('/post/new',(req,res) => {
+app.get('/posts/new',(req,res) => {
     
     res.render('new')
     
