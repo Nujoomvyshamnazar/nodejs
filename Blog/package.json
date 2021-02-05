@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
-      "test":"hello Nujoom Its working"
-    
+    "test": "hello Nujoom Its working"
   },
   "keywords": [
     "Nujoom",
@@ -15,7 +14,11 @@
   "author": "Nujoom Nazar",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.4"
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "express-edge": "^1.0.0",
+    "mangodb": "^1.0.0",
+    "mongoose": "^5.5.2"
   },
   "devDependencies": {
     "nodemon": "^1.18.11"
